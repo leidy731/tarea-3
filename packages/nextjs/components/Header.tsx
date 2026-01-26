@@ -12,6 +12,7 @@ import {
   ChartBarIcon,
   ListBulletIcon,
   PencilSquareIcon,
+  PlusIcon,
   UserPlusIcon,
 } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
@@ -31,16 +32,16 @@ export const menuLinks: HeaderMenuLink[] = [
   },
   {
     label: "Carreras",
-    href: "/careers",
-    icon: <ListBulletIcon className="h-4 w-4" />,
+    href: "/add-career",
+    icon: <PlusIcon className="h-4 w-4" />,
   },
   {
-    label: "Agregar",
+    label: "Estudiantes",
     href: "/add-student",
     icon: <UserPlusIcon className="h-4 w-4" />,
   },
   {
-    label: "Estudiantes",
+    label: "Lista",
     href: "/list",
     icon: <ListBulletIcon className="h-4 w-4" />,
   },
