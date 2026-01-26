@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
+  const cedulaParam = location.search.split("cedula=")[1] || "";
+
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
-  const [cedula, setCedula] = useState("");
+  const [cedula, setCedula] = useState(cedulaParam);
   const [carrera, setCarrera] = useState("");
 
   // Leer las carreras desde el Smart Contract
@@ -34,6 +36,12 @@ const Home: NextPage = () => {
       console.error("Error al registrar:", e);
     }
   };
+
+  useEffect(() => {
+    if (cedulaParam) {
+      setCedula(cedulaParam);
+    }
+  }, [cedulaParam]);
 
   return (
     <div className="flex flex-col items-center py-10 bg-base-200 min-h-screen">

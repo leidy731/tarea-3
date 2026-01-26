@@ -101,7 +101,7 @@ const MarcarComida: NextPage = () => {
             {cedula && !estudianteExiste && !validando && (
               <div className="alert alert-warning mt-4 flex flex-col sm:flex-row items-center gap-4">
                 <span className="text-sm font-medium">No registrado en el sistema.</span>
-                <Link href="/" className="btn btn-sm btn-ghost border-current">
+                <Link href={`/add-student?cedula=${cedula}`} className="btn btn-sm btn-ghost border-current">
                   Registrar Estudiante
                 </Link>
               </div>
