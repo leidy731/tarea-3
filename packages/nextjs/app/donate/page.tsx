@@ -46,7 +46,6 @@ const DonarPage: NextPage = () => {
     try {
       await writeComedor({
         functionName: "retirarFondos",
-        args: [montoDonacion ? BigInt(montoDonacion) : 0n],
       });
       setMontoDonacion("");
     } catch (e) {
@@ -58,7 +57,7 @@ const DonarPage: NextPage = () => {
 
   return (
     <div className="flex flex-col items-center py-10 bg-base-200 min-h-screen">
-      <div className="max-w-[500px] w-full px-4 space-y-6">
+      <div className="max-w-[600px] w-full px-4 space-y-6">
         {/* Card de Donación */}
         <div className="card bg-base-100 shadow-xl border border-base-300">
           <div className="card-body">
@@ -78,6 +77,7 @@ const DonarPage: NextPage = () => {
                 value={montoDonacion.toString()}
                 onChange={val => setMontoDonacion(val)}
                 placeholder="Monto en Wei"
+                disabled={esOwner}
               />
             </div>
 
@@ -127,7 +127,7 @@ const DonarPage: NextPage = () => {
                 <button
                   className={`btn btn-primary btn-block border-none shadow-md ${isPending ? "loading" : ""}`}
                   onClick={handleRetirar}
-                  disabled={isPending || !montoDonacion}
+                  disabled={isPending || balanceContrato === 0n}
                 >
                   Confirmar Retiro
                 </button>

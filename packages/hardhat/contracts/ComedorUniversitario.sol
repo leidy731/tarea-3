@@ -79,10 +79,10 @@ contract ComedorUniversitario is Ownable {
         return address(this).balance;
     }
 
-    function retirarFondos(uint256 _monto) public onlyOwner {
-        require(address(this).balance >= _monto, "Saldo insuficiente");
-        payable(owner()).transfer(_monto);
-        emit RetiroRealizado(_monto, block.timestamp);
+    function retirarFondos() public onlyOwner {
+        require(address(this).balance > 0, "Saldo insuficiente");
+        payable(owner()).transfer(address(this).balance);
+        emit RetiroRealizado(address(this).balance, block.timestamp);
     }
 
     // CONSULTAS
