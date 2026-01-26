@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import { useScaffoldEventHistory, useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
 const ListaEstudiantes: NextPage = () => {
-  // 1. Obtenemos el historial de eventos para saber QUÉ cédulas existen
   const { data: eventosRegistro, isLoading: cargandoEventos } = useScaffoldEventHistory({
     contractName: "ComedorUniversitario",
     eventName: "EstudianteRegistrado",
