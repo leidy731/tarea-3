@@ -25,22 +25,27 @@ type HeaderMenuLink = {
 
 export const menuLinks: HeaderMenuLink[] = [
   {
-    label: "Dashboard",
+    label: "Inicio",
     href: "/",
     icon: <ChartBarIcon className="h-4 w-4" />,
   },
   {
-    label: "Agregar Estudiante",
+    label: "Carreras",
+    href: "/careers",
+    icon: <ListBulletIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Agregar",
     href: "/add-student",
     icon: <UserPlusIcon className="h-4 w-4" />,
   },
   {
-    label: "Listar Estudiantes",
+    label: "Estudiantes",
     href: "/list",
     icon: <ListBulletIcon className="h-4 w-4" />,
   },
   {
-    label: "Formulario de Comida",
+    label: "Comer",
     href: "/form-eat",
     icon: <PencilSquareIcon className="h-4 w-4" />,
   },
@@ -115,11 +120,10 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">Scaffold-ETH</span>
-            <span className="text-xs">Ethereum dev stack</span>
+            <span className="font-bold leading-tight">Comedor UPTA</span>
           </div>
         </Link>
-        <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
+        <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1">
           <HeaderMenuLinks />
         </ul>
       </div>
@@ -130,3 +134,7 @@ export const Header = () => {
     </div>
   );
 };
+
+//TODO: agregar la parte dee agregar carrera, modal o section. Dependera de como quiera que sea el usuario
+//TODO: agregar abajo del card de fondos en el dashboard la parte de retirar fondos
+//TODO: ver que más mejorar
