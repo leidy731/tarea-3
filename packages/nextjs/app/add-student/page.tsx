@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
-const Home: NextPage = () => {
+const AddStudentPage: NextPage = () => {
   const cedulaParam = location.search.split("cedula=")[1] || "";
 
   const [nombre, setNombre] = useState("");
@@ -147,4 +147,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default AddStudentPage;
