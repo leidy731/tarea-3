@@ -1,0 +1,569 @@
+{
+  "address": "0xFbD2a981d46E794eDE5aAaA1f22A479FFf2b7990",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableInvalidOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableUnauthorizedAccount",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "nombreCarrera",
+          "type": "string"
+        }
+      ],
+      "name": "CarreraAgregada",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "cedula",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fecha",
+          "type": "uint256"
+        }
+      ],
+      "name": "ComidaServida",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "donante",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "monto",
+          "type": "uint256"
+        }
+      ],
+      "name": "DonacionRecibida",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "cedula",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "nombre",
+          "type": "string"
+        }
+      ],
+      "name": "EstudianteRegistrado",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "monto",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fecha",
+          "type": "uint256"
+        }
+      ],
+      "name": "RetiroRealizado",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_nombre",
+          "type": "string"
+        }
+      ],
+      "name": "agregarCarrera",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "carreras",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "donar",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "estudiantes",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "nombre",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "apellido",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "cedula",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "carrera",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ultimaVezQueComio",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "existe",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "obtenerBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "obtenerCarreras",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_cedula",
+          "type": "uint256"
+        }
+      ],
+      "name": "puedeComer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_cedula",
+          "type": "uint256"
+        }
+      ],
+      "name": "registrarConsumo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_cedula",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_nombre",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_apellido",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_carrera",
+          "type": "string"
+        }
+      ],
+      "name": "registrarEstudiante",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "retirarFondos",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalComidasServidas",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x94700a4cb3965d85981c738b6bda5a075697edcb98828669ddf28fede5ebd28e",
+  "receipt": {
+    "to": null,
+    "from": "0x30Ab4B246037448c6bC3d0950932fB8b98F2f614",
+    "contractAddress": "0xFbD2a981d46E794eDE5aAaA1f22A479FFf2b7990",
+    "transactionIndex": 55,
+    "gasUsed": "1055242",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000080000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000004000000000000000000000000000010000000000100000000",
+    "blockHash": "0x190cf598f5071c9ddde3e1a73c81c58541553d09684f89ecf3ed8e693b56c86d",
+    "transactionHash": "0x94700a4cb3965d85981c738b6bda5a075697edcb98828669ddf28fede5ebd28e",
+    "logs": [
+      {
+        "transactionIndex": 55,
+        "blockNumber": 10153021,
+        "transactionHash": "0x94700a4cb3965d85981c738b6bda5a075697edcb98828669ddf28fede5ebd28e",
+        "address": "0xFbD2a981d46E794eDE5aAaA1f22A479FFf2b7990",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x00000000000000000000000030ab4b246037448c6bc3d0950932fb8b98f2f614"
+        ],
+        "data": "0x",
+        "logIndex": 74,
+        "blockHash": "0x190cf598f5071c9ddde3e1a73c81c58541553d09684f89ecf3ed8e693b56c86d"
+      }
+    ],
+    "blockNumber": 10153021,
+    "cumulativeGasUsed": "10274751",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x30Ab4B246037448c6bC3d0950932fB8b98F2f614"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "52c6e0ed85c880082fb3eba39e8e6c88",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"nombreCarrera\",\"type\":\"string\"}],\"name\":\"CarreraAgregada\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"cedula\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fecha\",\"type\":\"uint256\"}],\"name\":\"ComidaServida\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"donante\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"monto\",\"type\":\"uint256\"}],\"name\":\"DonacionRecibida\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"cedula\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"nombre\",\"type\":\"string\"}],\"name\":\"EstudianteRegistrado\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"monto\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fecha\",\"type\":\"uint256\"}],\"name\":\"RetiroRealizado\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_nombre\",\"type\":\"string\"}],\"name\":\"agregarCarrera\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"carreras\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"donar\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"estudiantes\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"nombre\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"apellido\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"cedula\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"carrera\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"ultimaVezQueComio\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existe\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"obtenerBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"obtenerCarreras\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_cedula\",\"type\":\"uint256\"}],\"name\":\"puedeComer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_cedula\",\"type\":\"uint256\"}],\"name\":\"registrarConsumo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_cedula\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_nombre\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_apellido\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_carrera\",\"type\":\"string\"}],\"name\":\"registrarEstudiante\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"retirarFondos\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalComidasServidas\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"errors\":{\"OwnableInvalidOwner(address)\":[{\"details\":\"The owner is not a valid owner account. (eg. `address(0)`)\"}],\"OwnableUnauthorizedAccount(address)\":[{\"details\":\"The caller account is not authorized to perform an operation.\"}]},\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ComedorUniversitario.sol\":\"ComedorUniversitario\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.20;\\n\\nimport {Context} from \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * The initial owner is set to the address provided by the deployer. This can\\n * later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    /**\\n     * @dev The caller account is not authorized to perform an operation.\\n     */\\n    error OwnableUnauthorizedAccount(address account);\\n\\n    /**\\n     * @dev The owner is not a valid owner account. (eg. `address(0)`)\\n     */\\n    error OwnableInvalidOwner(address owner);\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the address provided by the deployer as the initial owner.\\n     */\\n    constructor(address initialOwner) {\\n        if (initialOwner == address(0)) {\\n            revert OwnableInvalidOwner(address(0));\\n        }\\n        _transferOwnership(initialOwner);\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        if (owner() != _msgSender()) {\\n            revert OwnableUnauthorizedAccount(_msgSender());\\n        }\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby disabling any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        if (newOwner == address(0)) {\\n            revert OwnableInvalidOwner(address(0));\\n        }\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.1) (utils/Context.sol)\\n\\npragma solidity ^0.8.20;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n\\n    function _contextSuffixLength() internal view virtual returns (uint256) {\\n        return 0;\\n    }\\n}\\n\",\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\"},\"contracts/ComedorUniversitario.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\ncontract ComedorUniversitario is Ownable {\\n    struct Estudiante {\\n        string nombre;\\n        string apellido;\\n        uint256 cedula;\\n        string carrera;\\n        uint256 ultimaVezQueComio;\\n        bool existe;\\n    }\\n\\n    string[] public carreras;\\n    mapping(uint256 => Estudiante) public estudiantes;\\n    uint256 public totalComidasServidas;\\n\\n    // EVENTOS\\n    event EstudianteRegistrado(uint256 indexed cedula, string nombre);\\n    event CarreraAgregada(string nombreCarrera);\\n    event ComidaServida(uint256 indexed cedula, uint256 fecha);\\n    event DonacionRecibida(address indexed donante, uint256 monto);\\n    event RetiroRealizado(uint256 monto, uint256 fecha);\\n\\n    constructor(address _owner) Ownable(_owner) {\\n        carreras.push(\\\"Informatica\\\");\\n        carreras.push(\\\"Electronica\\\");\\n    }\\n\\n    // GESTI\\u00d3N DE CARRERAS\\n    function agregarCarrera(string memory _nombre) public onlyOwner {\\n        carreras.push(_nombre);\\n        emit CarreraAgregada(_nombre);\\n    }\\n\\n    function obtenerCarreras() public view returns (string[] memory) {\\n        return carreras;\\n    }\\n\\n    // GESTI\\u00d3N DE ESTUDIANTES\\n    function registrarEstudiante(\\n        uint256 _cedula,\\n        string memory _nombre,\\n        string memory _apellido,\\n        string memory _carrera\\n    ) public onlyOwner {\\n        require(!estudiantes[_cedula].existe, \\\"El estudiante ya esta registrado\\\");\\n\\n        estudiantes[_cedula] = Estudiante({\\n            nombre: _nombre,\\n            apellido: _apellido,\\n            cedula: _cedula,\\n            carrera: _carrera,\\n            ultimaVezQueComio: 0,\\n            existe: true\\n        });\\n\\n        emit EstudianteRegistrado(_cedula, _nombre);\\n    }\\n\\n    function registrarConsumo(uint256 _cedula) public onlyOwner {\\n        require(estudiantes[_cedula].existe, \\\"Estudiante no registrado\\\");\\n        require(block.timestamp >= estudiantes[_cedula].ultimaVezQueComio + 12 hours, \\\"Ya comio hoy\\\");\\n\\n        estudiantes[_cedula].ultimaVezQueComio = block.timestamp;\\n        totalComidasServidas++;\\n        emit ComidaServida(_cedula, block.timestamp);\\n    }\\n\\n    // DONACIONES Y FONDOS\\n    // Esta funci\\u00f3n permite que la DonatePage reciba dinero y emita el evento\\n    receive() external payable {\\n        emit DonacionRecibida(msg.sender, msg.value);\\n    }\\n\\n    function obtenerBalance() public view returns (uint256) {\\n        return address(this).balance;\\n    }\\n\\n    function retirarFondos() public onlyOwner {\\n        require(address(this).balance > 0, \\\"Saldo insuficiente\\\");\\n        payable(owner()).transfer(address(this).balance);\\n        emit RetiroRealizado(address(this).balance, block.timestamp);\\n    }\\n\\n    // CONSULTAS\\n    function puedeComer(uint256 _cedula) public view returns (bool) {\\n        if (!estudiantes[_cedula].existe) return false;\\n        return (block.timestamp >= estudiantes[_cedula].ultimaVezQueComio + 12 hours);\\n    }\\n\\n    // Agregar esto al contrato\\n    function donar() public payable {\\n        require(msg.value > 0, \\\"Debe enviar algo de ETH\\\");\\n        emit DonacionRecibida(msg.sender, msg.value);\\n    }\\n}\\n\",\"keccak256\":\"0xbb3eb83cb2327110753633bacb05dfc0bb08d0aae058137d3fff5ad72cb85e29\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161135738038061135783398101604081905261002f9161015c565b806001600160a01b03811661005e57604051631e4fbdf760e01b81526000600482015260240160405180910390fd5b6100678161010c565b5060018054808201825560009190915260408051808201909152600b81526a496e666f726d617469636160a81b6020820152600080516020611337833981519152909101906100b6908261022b565b5060018054808201825560009190915260408051808201909152600b81526a456c656374726f6e69636160a81b602082015260008051602061133783398151915290910190610105908261022b565b50506102e9565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b60006020828403121561016e57600080fd5b81516001600160a01b038116811461018557600080fd5b9392505050565b634e487b7160e01b600052604160045260246000fd5b600181811c908216806101b657607f821691505b6020821081036101d657634e487b7160e01b600052602260045260246000fd5b50919050565b601f82111561022657806000526020600020601f840160051c810160208510156102035750805b601f840160051c820191505b81811015610223576000815560010161020f565b50505b505050565b81516001600160401b038111156102445761024461018c565b6102588161025284546101a2565b846101dc565b6020601f82116001811461028c57600083156102745750848201515b600019600385901b1c1916600184901b178455610223565b600084815260208120601f198516915b828110156102bc578785015182556020948501946001909201910161029c565b50848210156102da5786840151600019600387901b60f8161c191681555b50505050600190811b01905550565b61103f806102f86000396000f3fe6080604052600436106100e15760003560e01c8063763027691161007f5780638da5cb5b116100595780638da5cb5b1461025d578063a4b9411014610285578063f2fde38b146102a5578063fe1c98f9146102c557600080fd5b806376302769146101f857806383cf64ea146102285780638af018801461024857600080fd5b8063506bf305116100bb578063506bf305146101645780635ee81666146101845780636f1bf171146101b1578063715018a6146101e357600080fd5b806313fc9b121461012257806322d9a1ee1461012c57806346d319bf1461014e57600080fd5b3661011d5760405134815233907f02968e8343c1291965bd721620439138c5fbb5c55751974ad09d4a07fed9f3bb9060200160405180910390a2005b600080fd5b61012a6102e7565b005b34801561013857600080fd5b50475b6040519081526020015b60405180910390f35b34801561015a57600080fd5b5061013b60035481565b34801561017057600080fd5b5061012a61017f366004610c3d565b610373565b34801561019057600080fd5b506101a461019f366004610c7a565b6103f1565b6040516101459190610cd9565b3480156101bd57600080fd5b506101d16101cc366004610c7a565b61049d565b60405161014596959493929190610cf3565b3480156101ef57600080fd5b5061012a61066d565b34801561020457600080fd5b50610218610213366004610c7a565b610681565b6040519015158152602001610145565b34801561023457600080fd5b5061012a610243366004610c7a565b6106c9565b34801561025457600080fd5b5061012a6107f3565b34801561026957600080fd5b506000546040516001600160a01b039091168152602001610145565b34801561029157600080fd5b5061012a6102a0366004610d4d565b6108b5565b3480156102b157600080fd5b5061012a6102c0366004610deb565b610a04565b3480156102d157600080fd5b506102da610a42565b6040516101459190610e14565b6000341161033c5760405162461bcd60e51b815260206004820152601760248201527f4465626520656e7669617220616c676f2064652045544800000000000000000060448201526064015b60405180910390fd5b60405134815233907f02968e8343c1291965bd721620439138c5fbb5c55751974ad09d4a07fed9f3bb9060200160405180910390a2565b61037b610b1b565b6001805480820182556000919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6016103b68282610f02565b507fc3879906c72efa6c4d2db1a779acb976f3b852abbe9efa9ad1c929110a70ef63816040516103e69190610cd9565b60405180910390a150565b6001818154811061040157600080fd5b90600052602060002001600091509050805461041c90610e79565b80601f016020809104026020016040519081016040528092919081815260200182805461044890610e79565b80156104955780601f1061046a57610100808354040283529160200191610495565b820191906000526020600020905b81548152906001019060200180831161047857829003601f168201915b505050505081565b6002602052600090815260409020805481906104b890610e79565b80601f01602080910402602001604051908101604052809291908181526020018280546104e490610e79565b80156105315780601f1061050657610100808354040283529160200191610531565b820191906000526020600020905b81548152906001019060200180831161051457829003601f168201915b50505050509080600101805461054690610e79565b80601f016020809104026020016040519081016040528092919081815260200182805461057290610e79565b80156105bf5780601f10610594576101008083540402835291602001916105bf565b820191906000526020600020905b8154815290600101906020018083116105a257829003601f168201915b5050505050908060020154908060030180546105da90610e79565b80601f016020809104026020016040519081016040528092919081815260200182805461060690610e79565b80156106535780601f1061062857610100808354040283529160200191610653565b820191906000526020600020905b81548152906001019060200180831161063657829003601f168201915b50505050600483015460059093015491929160ff16905086565b610675610b1b565b61067f6000610b48565b565b60008181526002602052604081206005015460ff166106a257506000919050565b6000828152600260205260409020600401546106c09061a8c0610fd7565b42101592915050565b6106d1610b1b565b60008181526002602052604090206005015460ff166107325760405162461bcd60e51b815260206004820152601860248201527f457374756469616e7465206e6f207265676973747261646f00000000000000006044820152606401610333565b6000818152600260205260409020600401546107509061a8c0610fd7565b42101561078e5760405162461bcd60e51b815260206004820152600c60248201526b596120636f6d696f20686f7960a01b6044820152606401610333565b60008181526002602052604081204260049091015560038054916107b183610ff0565b9190505550807f473d0bd0f4579a9459811c5a3d0a1722b715fd9e721f08db96aec36fa631081a426040516107e891815260200190565b60405180910390a250565b6107fb610b1b565b600047116108405760405162461bcd60e51b815260206004820152601260248201527153616c646f20696e737566696369656e746560701b6044820152606401610333565b600080546040516001600160a01b03909116914780156108fc02929091818181858888f1935050505015801561087a573d6000803e3d6000fd5b50604080514781524260208201527f01dd5e894dc88dbede551e7aba8ac4cee9a0dea3968c617dca88db2ebaa3c02c910160405180910390a1565b6108bd610b1b565b60008481526002602052604090206005015460ff161561091f5760405162461bcd60e51b815260206004820181905260248201527f456c20657374756469616e74652079612065737461207265676973747261646f6044820152606401610333565b6040805160c081018252848152602080820185905281830187905260608201849052600060808301819052600160a08401528781526002909152919091208151819061096b9082610f02565b50602082015160018201906109809082610f02565b50604082015160028201556060820151600382019061099f9082610f02565b506080820151600482015560a0909101516005909101805460ff191691151591909117905560405184907fd59045935726fb5d763ef8093e4f75e3db8215fce2c68c5d42f8ad8b84c0b63c906109f6908690610cd9565b60405180910390a250505050565b610a0c610b1b565b6001600160a01b038116610a3657604051631e4fbdf760e01b815260006004820152602401610333565b610a3f81610b48565b50565b60606001805480602002602001604051908101604052809291908181526020016000905b82821015610b12578382906000526020600020018054610a8590610e79565b80601f0160208091040260200160405190810160405280929190818152602001828054610ab190610e79565b8015610afe5780601f10610ad357610100808354040283529160200191610afe565b820191906000526020600020905b815481529060010190602001808311610ae157829003601f168201915b505050505081526020019060010190610a66565b50505050905090565b6000546001600160a01b0316331461067f5760405163118cdaa760e01b8152336004820152602401610333565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b634e487b7160e01b600052604160045260246000fd5b600082601f830112610bbf57600080fd5b813567ffffffffffffffff811115610bd957610bd9610b98565b604051601f8201601f19908116603f0116810167ffffffffffffffff81118282101715610c0857610c08610b98565b604052818152838201602001851015610c2057600080fd5b816020850160208301376000918101602001919091529392505050565b600060208284031215610c4f57600080fd5b813567ffffffffffffffff811115610c6657600080fd5b610c7284828501610bae565b949350505050565b600060208284031215610c8c57600080fd5b5035919050565b6000815180845260005b81811015610cb957602081850181015186830182015201610c9d565b506000602082860101526020601f19601f83011685010191505092915050565b602081526000610cec6020830184610c93565b9392505050565b60c081526000610d0660c0830189610c93565b8281036020840152610d188189610c93565b90508660408401528281036060840152610d328187610c93565b6080840195909552505090151560a090910152949350505050565b60008060008060808587031215610d6357600080fd5b84359350602085013567ffffffffffffffff811115610d8157600080fd5b610d8d87828801610bae565b935050604085013567ffffffffffffffff811115610daa57600080fd5b610db687828801610bae565b925050606085013567ffffffffffffffff811115610dd357600080fd5b610ddf87828801610bae565b91505092959194509250565b600060208284031215610dfd57600080fd5b81356001600160a01b0381168114610cec57600080fd5b6000602082016020835280845180835260408501915060408160051b86010192506020860160005b82811015610e6d57603f19878603018452610e58858351610c93565b94506020938401939190910190600101610e3c565b50929695505050505050565b600181811c90821680610e8d57607f821691505b602082108103610ead57634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115610efd57806000526020600020601f840160051c81016020851015610eda5750805b601f840160051c820191505b81811015610efa5760008155600101610ee6565b50505b505050565b815167ffffffffffffffff811115610f1c57610f1c610b98565b610f3081610f2a8454610e79565b84610eb3565b6020601f821160018114610f645760008315610f4c5750848201515b600019600385901b1c1916600184901b178455610efa565b600084815260208120601f198516915b82811015610f945787850151825560209485019460019092019101610f74565b5084821015610fb25786840151600019600387901b60f8161c191681555b50505050600190811b01905550565b634e487b7160e01b600052601160045260246000fd5b80820180821115610fea57610fea610fc1565b92915050565b60006001820161100257611002610fc1565b506001019056fea2646970667358221220ef9e9abe1f4b4be6d2b51f1f72310b370281a8fbaff7f71954d48f84be44df8764736f6c634300081e0033b10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6",
+  "deployedBytecode": "0x6080604052600436106100e15760003560e01c8063763027691161007f5780638da5cb5b116100595780638da5cb5b1461025d578063a4b9411014610285578063f2fde38b146102a5578063fe1c98f9146102c557600080fd5b806376302769146101f857806383cf64ea146102285780638af018801461024857600080fd5b8063506bf305116100bb578063506bf305146101645780635ee81666146101845780636f1bf171146101b1578063715018a6146101e357600080fd5b806313fc9b121461012257806322d9a1ee1461012c57806346d319bf1461014e57600080fd5b3661011d5760405134815233907f02968e8343c1291965bd721620439138c5fbb5c55751974ad09d4a07fed9f3bb9060200160405180910390a2005b600080fd5b61012a6102e7565b005b34801561013857600080fd5b50475b6040519081526020015b60405180910390f35b34801561015a57600080fd5b5061013b60035481565b34801561017057600080fd5b5061012a61017f366004610c3d565b610373565b34801561019057600080fd5b506101a461019f366004610c7a565b6103f1565b6040516101459190610cd9565b3480156101bd57600080fd5b506101d16101cc366004610c7a565b61049d565b60405161014596959493929190610cf3565b3480156101ef57600080fd5b5061012a61066d565b34801561020457600080fd5b50610218610213366004610c7a565b610681565b6040519015158152602001610145565b34801561023457600080fd5b5061012a610243366004610c7a565b6106c9565b34801561025457600080fd5b5061012a6107f3565b34801561026957600080fd5b506000546040516001600160a01b039091168152602001610145565b34801561029157600080fd5b5061012a6102a0366004610d4d565b6108b5565b3480156102b157600080fd5b5061012a6102c0366004610deb565b610a04565b3480156102d157600080fd5b506102da610a42565b6040516101459190610e14565b6000341161033c5760405162461bcd60e51b815260206004820152601760248201527f4465626520656e7669617220616c676f2064652045544800000000000000000060448201526064015b60405180910390fd5b60405134815233907f02968e8343c1291965bd721620439138c5fbb5c55751974ad09d4a07fed9f3bb9060200160405180910390a2565b61037b610b1b565b6001805480820182556000919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6016103b68282610f02565b507fc3879906c72efa6c4d2db1a779acb976f3b852abbe9efa9ad1c929110a70ef63816040516103e69190610cd9565b60405180910390a150565b6001818154811061040157600080fd5b90600052602060002001600091509050805461041c90610e79565b80601f016020809104026020016040519081016040528092919081815260200182805461044890610e79565b80156104955780601f1061046a57610100808354040283529160200191610495565b820191906000526020600020905b81548152906001019060200180831161047857829003601f168201915b505050505081565b6002602052600090815260409020805481906104b890610e79565b80601f01602080910402602001604051908101604052809291908181526020018280546104e490610e79565b80156105315780601f1061050657610100808354040283529160200191610531565b820191906000526020600020905b81548152906001019060200180831161051457829003601f168201915b50505050509080600101805461054690610e79565b80601f016020809104026020016040519081016040528092919081815260200182805461057290610e79565b80156105bf5780601f10610594576101008083540402835291602001916105bf565b820191906000526020600020905b8154815290600101906020018083116105a257829003601f168201915b5050505050908060020154908060030180546105da90610e79565b80601f016020809104026020016040519081016040528092919081815260200182805461060690610e79565b80156106535780601f1061062857610100808354040283529160200191610653565b820191906000526020600020905b81548152906001019060200180831161063657829003601f168201915b50505050600483015460059093015491929160ff16905086565b610675610b1b565b61067f6000610b48565b565b60008181526002602052604081206005015460ff166106a257506000919050565b6000828152600260205260409020600401546106c09061a8c0610fd7565b42101592915050565b6106d1610b1b565b60008181526002602052604090206005015460ff166107325760405162461bcd60e51b815260206004820152601860248201527f457374756469616e7465206e6f207265676973747261646f00000000000000006044820152606401610333565b6000818152600260205260409020600401546107509061a8c0610fd7565b42101561078e5760405162461bcd60e51b815260206004820152600c60248201526b596120636f6d696f20686f7960a01b6044820152606401610333565b60008181526002602052604081204260049091015560038054916107b183610ff0565b9190505550807f473d0bd0f4579a9459811c5a3d0a1722b715fd9e721f08db96aec36fa631081a426040516107e891815260200190565b60405180910390a250565b6107fb610b1b565b600047116108405760405162461bcd60e51b815260206004820152601260248201527153616c646f20696e737566696369656e746560701b6044820152606401610333565b600080546040516001600160a01b03909116914780156108fc02929091818181858888f1935050505015801561087a573d6000803e3d6000fd5b50604080514781524260208201527f01dd5e894dc88dbede551e7aba8ac4cee9a0dea3968c617dca88db2ebaa3c02c910160405180910390a1565b6108bd610b1b565b60008481526002602052604090206005015460ff161561091f5760405162461bcd60e51b815260206004820181905260248201527f456c20657374756469616e74652079612065737461207265676973747261646f6044820152606401610333565b6040805160c081018252848152602080820185905281830187905260608201849052600060808301819052600160a08401528781526002909152919091208151819061096b9082610f02565b50602082015160018201906109809082610f02565b50604082015160028201556060820151600382019061099f9082610f02565b506080820151600482015560a0909101516005909101805460ff191691151591909117905560405184907fd59045935726fb5d763ef8093e4f75e3db8215fce2c68c5d42f8ad8b84c0b63c906109f6908690610cd9565b60405180910390a250505050565b610a0c610b1b565b6001600160a01b038116610a3657604051631e4fbdf760e01b815260006004820152602401610333565b610a3f81610b48565b50565b60606001805480602002602001604051908101604052809291908181526020016000905b82821015610b12578382906000526020600020018054610a8590610e79565b80601f0160208091040260200160405190810160405280929190818152602001828054610ab190610e79565b8015610afe5780601f10610ad357610100808354040283529160200191610afe565b820191906000526020600020905b815481529060010190602001808311610ae157829003601f168201915b505050505081526020019060010190610a66565b50505050905090565b6000546001600160a01b0316331461067f5760405163118cdaa760e01b8152336004820152602401610333565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b634e487b7160e01b600052604160045260246000fd5b600082601f830112610bbf57600080fd5b813567ffffffffffffffff811115610bd957610bd9610b98565b604051601f8201601f19908116603f0116810167ffffffffffffffff81118282101715610c0857610c08610b98565b604052818152838201602001851015610c2057600080fd5b816020850160208301376000918101602001919091529392505050565b600060208284031215610c4f57600080fd5b813567ffffffffffffffff811115610c6657600080fd5b610c7284828501610bae565b949350505050565b600060208284031215610c8c57600080fd5b5035919050565b6000815180845260005b81811015610cb957602081850181015186830182015201610c9d565b506000602082860101526020601f19601f83011685010191505092915050565b602081526000610cec6020830184610c93565b9392505050565b60c081526000610d0660c0830189610c93565b8281036020840152610d188189610c93565b90508660408401528281036060840152610d328187610c93565b6080840195909552505090151560a090910152949350505050565b60008060008060808587031215610d6357600080fd5b84359350602085013567ffffffffffffffff811115610d8157600080fd5b610d8d87828801610bae565b935050604085013567ffffffffffffffff811115610daa57600080fd5b610db687828801610bae565b925050606085013567ffffffffffffffff811115610dd357600080fd5b610ddf87828801610bae565b91505092959194509250565b600060208284031215610dfd57600080fd5b81356001600160a01b0381168114610cec57600080fd5b6000602082016020835280845180835260408501915060408160051b86010192506020860160005b82811015610e6d57603f19878603018452610e58858351610c93565b94506020938401939190910190600101610e3c565b50929695505050505050565b600181811c90821680610e8d57607f821691505b602082108103610ead57634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115610efd57806000526020600020601f840160051c81016020851015610eda5750805b601f840160051c820191505b81811015610efa5760008155600101610ee6565b50505b505050565b815167ffffffffffffffff811115610f1c57610f1c610b98565b610f3081610f2a8454610e79565b84610eb3565b6020601f821160018114610f645760008315610f4c5750848201515b600019600385901b1c1916600184901b178455610efa565b600084815260208120601f198516915b82811015610f945787850151825560209485019460019092019101610f74565b5084821015610fb25786840151600019600387901b60f8161c191681555b50505050600190811b01905550565b634e487b7160e01b600052601160045260246000fd5b80820180821115610fea57610fea610fc1565b92915050565b60006001820161100257611002610fc1565b506001019056fea2646970667358221220ef9e9abe1f4b4be6d2b51f1f72310b370281a8fbaff7f71954d48f84be44df8764736f6c634300081e0033",
+  "devdoc": {
+    "errors": {
+      "OwnableInvalidOwner(address)": [
+        {
+          "details": "The owner is not a valid owner account. (eg. `address(0)`)"
+        }
+      ],
+      "OwnableUnauthorizedAccount(address)": [
+        {
+          "details": "The caller account is not authorized to perform an operation."
+        }
+      ]
+    },
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 8,
+        "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 198,
+        "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+        "label": "carreras",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_string_storage)dyn_storage"
+      },
+      {
+        "astId": 203,
+        "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+        "label": "estudiantes",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_uint256,t_struct(Estudiante)195_storage)"
+      },
+      {
+        "astId": 205,
+        "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+        "label": "totalComidasServidas",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_string_storage)dyn_storage": {
+        "base": "t_string_storage",
+        "encoding": "dynamic_array",
+        "label": "string[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_uint256,t_struct(Estudiante)195_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct ComedorUniversitario.Estudiante)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Estudiante)195_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Estudiante)195_storage": {
+        "encoding": "inplace",
+        "label": "struct ComedorUniversitario.Estudiante",
+        "members": [
+          {
+            "astId": 184,
+            "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+            "label": "nombre",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 186,
+            "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+            "label": "apellido",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 188,
+            "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+            "label": "cedula",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 190,
+            "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+            "label": "carrera",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 192,
+            "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+            "label": "ultimaVezQueComio",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 194,
+            "contract": "contracts/ComedorUniversitario.sol:ComedorUniversitario",
+            "label": "existe",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_bool"
+          }
+        ],
+        "numberOfBytes": "192"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

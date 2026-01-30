@@ -385,6 +385,386 @@ const deployedContracts = {
       deployedOnBlock: 29,
     },
   },
+  11155111: {
+    ComedorUniversitario: {
+      address: "0xFbD2a981d46E794eDE5aAaA1f22A479FFf2b7990",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_owner",
+              type: "address",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "OwnableInvalidOwner",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "OwnableUnauthorizedAccount",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "string",
+              name: "nombreCarrera",
+              type: "string",
+            },
+          ],
+          name: "CarreraAgregada",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "cedula",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "fecha",
+              type: "uint256",
+            },
+          ],
+          name: "ComidaServida",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "donante",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "monto",
+              type: "uint256",
+            },
+          ],
+          name: "DonacionRecibida",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "cedula",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "nombre",
+              type: "string",
+            },
+          ],
+          name: "EstudianteRegistrado",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "previousOwner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "monto",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "fecha",
+              type: "uint256",
+            },
+          ],
+          name: "RetiroRealizado",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_nombre",
+              type: "string",
+            },
+          ],
+          name: "agregarCarrera",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "carreras",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "donar",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "estudiantes",
+          outputs: [
+            {
+              internalType: "string",
+              name: "nombre",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "apellido",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "cedula",
+              type: "uint256",
+            },
+            {
+              internalType: "string",
+              name: "carrera",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "ultimaVezQueComio",
+              type: "uint256",
+            },
+            {
+              internalType: "bool",
+              name: "existe",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "obtenerBalance",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "obtenerCarreras",
+          outputs: [
+            {
+              internalType: "string[]",
+              name: "",
+              type: "string[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_cedula",
+              type: "uint256",
+            },
+          ],
+          name: "puedeComer",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_cedula",
+              type: "uint256",
+            },
+          ],
+          name: "registrarConsumo",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_cedula",
+              type: "uint256",
+            },
+            {
+              internalType: "string",
+              name: "_nombre",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_apellido",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_carrera",
+              type: "string",
+            },
+          ],
+          name: "registrarEstudiante",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "retirarFondos",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalComidasServidas",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
+        },
+      ],
+      inheritedFunctions: {
+        owner: "@openzeppelin/contracts/access/Ownable.sol",
+        renounceOwnership: "@openzeppelin/contracts/access/Ownable.sol",
+        transferOwnership: "@openzeppelin/contracts/access/Ownable.sol",
+      },
+      deployedOnBlock: 10153021,
+    },
+  },
 } as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;

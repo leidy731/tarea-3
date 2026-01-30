@@ -1,0 +1,42 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "@openzeppelin/contracts/access/Ownable.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable.sol)\n\npragma solidity ^0.8.20;\n\nimport {Context} from \"../utils/Context.sol\";\n\n/**\n * @dev Contract module which provides a basic access control mechanism, where\n * there is an account (an owner) that can be granted exclusive access to\n * specific functions.\n *\n * The initial owner is set to the address provided by the deployer. This can\n * later be changed with {transferOwnership}.\n *\n * This module is used through inheritance. It will make available the modifier\n * `onlyOwner`, which can be applied to your functions to restrict their use to\n * the owner.\n */\nabstract contract Ownable is Context {\n    address private _owner;\n\n    /**\n     * @dev The caller account is not authorized to perform an operation.\n     */\n    error OwnableUnauthorizedAccount(address account);\n\n    /**\n     * @dev The owner is not a valid owner account. (eg. `address(0)`)\n     */\n    error OwnableInvalidOwner(address owner);\n\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\n\n    /**\n     * @dev Initializes the contract setting the address provided by the deployer as the initial owner.\n     */\n    constructor(address initialOwner) {\n        if (initialOwner == address(0)) {\n            revert OwnableInvalidOwner(address(0));\n        }\n        _transferOwnership(initialOwner);\n    }\n\n    /**\n     * @dev Throws if called by any account other than the owner.\n     */\n    modifier onlyOwner() {\n        _checkOwner();\n        _;\n    }\n\n    /**\n     * @dev Returns the address of the current owner.\n     */\n    function owner() public view virtual returns (address) {\n        return _owner;\n    }\n\n    /**\n     * @dev Throws if the sender is not the owner.\n     */\n    function _checkOwner() internal view virtual {\n        if (owner() != _msgSender()) {\n            revert OwnableUnauthorizedAccount(_msgSender());\n        }\n    }\n\n    /**\n     * @dev Leaves the contract without owner. It will not be possible to call\n     * `onlyOwner` functions. Can only be called by the current owner.\n     *\n     * NOTE: Renouncing ownership will leave the contract without an owner,\n     * thereby disabling any functionality that is only available to the owner.\n     */\n    function renounceOwnership() public virtual onlyOwner {\n        _transferOwnership(address(0));\n    }\n\n    /**\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\n     * Can only be called by the current owner.\n     */\n    function transferOwnership(address newOwner) public virtual onlyOwner {\n        if (newOwner == address(0)) {\n            revert OwnableInvalidOwner(address(0));\n        }\n        _transferOwnership(newOwner);\n    }\n\n    /**\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\n     * Internal function without access restriction.\n     */\n    function _transferOwnership(address newOwner) internal virtual {\n        address oldOwner = _owner;\n        _owner = newOwner;\n        emit OwnershipTransferred(oldOwner, newOwner);\n    }\n}\n"
+    },
+    "@openzeppelin/contracts/utils/Context.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.1) (utils/Context.sol)\n\npragma solidity ^0.8.20;\n\n/**\n * @dev Provides information about the current execution context, including the\n * sender of the transaction and its data. While these are generally available\n * via msg.sender and msg.data, they should not be accessed in such a direct\n * manner, since when dealing with meta-transactions the account sending and\n * paying for execution may not be the actual sender (as far as an application\n * is concerned).\n *\n * This contract is only required for intermediate, library-like contracts.\n */\nabstract contract Context {\n    function _msgSender() internal view virtual returns (address) {\n        return msg.sender;\n    }\n\n    function _msgData() internal view virtual returns (bytes calldata) {\n        return msg.data;\n    }\n\n    function _contextSuffixLength() internal view virtual returns (uint256) {\n        return 0;\n    }\n}\n"
+    },
+    "contracts/ComedorUniversitario.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\n\ncontract ComedorUniversitario is Ownable {\n    struct Estudiante {\n        string nombre;\n        string apellido;\n        uint256 cedula;\n        string carrera;\n        uint256 ultimaVezQueComio;\n        bool existe;\n    }\n\n    string[] public carreras;\n    mapping(uint256 => Estudiante) public estudiantes;\n    uint256 public totalComidasServidas;\n\n    // EVENTOS\n    event EstudianteRegistrado(uint256 indexed cedula, string nombre);\n    event CarreraAgregada(string nombreCarrera);\n    event ComidaServida(uint256 indexed cedula, uint256 fecha);\n    event DonacionRecibida(address indexed donante, uint256 monto);\n    event RetiroRealizado(uint256 monto, uint256 fecha);\n\n    constructor(address _owner) Ownable(_owner) {\n        carreras.push(\"Informatica\");\n        carreras.push(\"Electronica\");\n    }\n\n    // GESTIÓN DE CARRERAS\n    function agregarCarrera(string memory _nombre) public onlyOwner {\n        carreras.push(_nombre);\n        emit CarreraAgregada(_nombre);\n    }\n\n    function obtenerCarreras() public view returns (string[] memory) {\n        return carreras;\n    }\n\n    // GESTIÓN DE ESTUDIANTES\n    function registrarEstudiante(\n        uint256 _cedula,\n        string memory _nombre,\n        string memory _apellido,\n        string memory _carrera\n    ) public onlyOwner {\n        require(!estudiantes[_cedula].existe, \"El estudiante ya esta registrado\");\n\n        estudiantes[_cedula] = Estudiante({\n            nombre: _nombre,\n            apellido: _apellido,\n            cedula: _cedula,\n            carrera: _carrera,\n            ultimaVezQueComio: 0,\n            existe: true\n        });\n\n        emit EstudianteRegistrado(_cedula, _nombre);\n    }\n\n    function registrarConsumo(uint256 _cedula) public onlyOwner {\n        require(estudiantes[_cedula].existe, \"Estudiante no registrado\");\n        require(block.timestamp >= estudiantes[_cedula].ultimaVezQueComio + 12 hours, \"Ya comio hoy\");\n\n        estudiantes[_cedula].ultimaVezQueComio = block.timestamp;\n        totalComidasServidas++;\n        emit ComidaServida(_cedula, block.timestamp);\n    }\n\n    // DONACIONES Y FONDOS\n    // Esta función permite que la DonatePage reciba dinero y emita el evento\n    receive() external payable {\n        emit DonacionRecibida(msg.sender, msg.value);\n    }\n\n    function obtenerBalance() public view returns (uint256) {\n        return address(this).balance;\n    }\n\n    function retirarFondos() public onlyOwner {\n        require(address(this).balance > 0, \"Saldo insuficiente\");\n        payable(owner()).transfer(address(this).balance);\n        emit RetiroRealizado(address(this).balance, block.timestamp);\n    }\n\n    // CONSULTAS\n    function puedeComer(uint256 _cedula) public view returns (bool) {\n        if (!estudiantes[_cedula].existe) return false;\n        return (block.timestamp >= estudiantes[_cedula].ultimaVezQueComio + 12 hours);\n    }\n\n    // Agregar esto al contrato\n    function donar() public payable {\n        require(msg.value > 0, \"Debe enviar algo de ETH\");\n        emit DonacionRecibida(msg.sender, msg.value);\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
